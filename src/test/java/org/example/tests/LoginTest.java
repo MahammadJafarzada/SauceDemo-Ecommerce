@@ -20,9 +20,11 @@ public class LoginTest extends BaseTest {
                 "secret_sauce"
         );
 
-        Assert.assertTrue(
-                loginPage.getCurrentUrl().contains("inventory.html"),
-                "Login failed: Inventory page did not open"
-        );
+//        Assert.assertTrue(
+//                loginPage.getCurrentUrl().contains("inventory.html"),
+//                "Login failed: Inventory page did not open"
+//        );
+        Assert.assertTrue(false, "Screenshot test");
+
     }
 }
