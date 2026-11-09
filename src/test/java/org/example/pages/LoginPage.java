@@ -12,7 +12,7 @@ public class LoginPage {
 
     private final WebDriver driver;
     private final WebDriverWait wait;
-
+    private final By errormessage =By.cssSelector("[data-test='error']");
     private final By usernameInput = By.id("user-name");
     private final By passwordInput = By.id("password");
     private final By loginButton = By.id("login-button");
@@ -55,5 +55,10 @@ public class LoginPage {
         enterUsername(username);
         enterPassword(password);
         clickLogin();
+    }
+    public String getErrorMessage() {
+        return wait.until(
+                ExpectedConditions.visibilityOfElementLocated(errormessage)
+        ).getText();
     }
 }
