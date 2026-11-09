@@ -36,7 +36,10 @@ public class CheckoutTest extends BaseTest {
         );
 
         cartPage.clickCheckout();
-
+        Assert.assertTrue(
+                driver.getCurrentUrl().contains("checkout-step-one.html"),
+                "Checkout page did not open. Current URL: " + driver.getCurrentUrl()
+        );
         CheckoutPage checkoutPage = new CheckoutPage(driver);
 
         checkoutPage.enterCustomerInformation(
